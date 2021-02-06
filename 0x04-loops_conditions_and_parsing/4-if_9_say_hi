@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # This script displays Holberton School 10 times, but for the 9th iteration, displays Holberton School and then hi on a new line
 a=0
-while [ $a -lt 10 ]
+while [ $a -lt 11 ]
 do
-	if [[ $a == 8 ]]
+	if [[ $a == 9 ]]
 	then
 		echo "Hi"
 	else
