@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # displays: To infinity and beyond indefinitely with a sleep 2 in between each iteration, and I am invincible!!! when receiving a SIGTERM signal
-trap "echo I am Invincible!!!" 15
+trap "echo I am Invincible!!!" SIGTERM
 i=0
 while [ $i -eq 0 ]
 do
