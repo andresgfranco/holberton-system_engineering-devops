@@ -1,11 +1,11 @@
 # Puppet manifest to set up client SSH configuration
-file {'~/.ssh/config':
-  ensure  => present,
-  replace => 'yes',
+file_line {'no authorized password':
+  ensure  => 'present',
   path    => '~/.ssh/config',
-  content => 'Host *
-     HostName 34.74.115.197
-     User ubuntu
-     IdentityFile ~/.ssh/holberton',
-  mode    => '7000',
+  line    => 'PasswordAuthentication no',
+}
+file_line {'file_identity':
+  ensure  => 'present',
+  path    => '~/.ssh/config',
+  line    => 'IdentityFile ~/.ssh/holberton',
 }
