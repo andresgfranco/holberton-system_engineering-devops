@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Script to install a Web server - nginx
+
+sudo apt-get -y update
+sudo apt -y install nginx
+ufw allow 'Nginx HTTP' # permisos para el puerto 80
+echo "Holberton School" > index.html
+sudo mv index.html /var/www/html/
+
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://github.com/andresgfranco permanent;' /etc/nginx/sites-available/default
+
+sudo service nginx restart
