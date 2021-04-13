@@ -9,7 +9,7 @@ echo "
 frontend colandru
 	bind *:80
 	mode http
-	default_bachend colandrubackend
+	default_backend colandrubackend
 
 backend colandrubackend
 	balance roundrobin
