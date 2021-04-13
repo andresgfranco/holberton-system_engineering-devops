@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Script that installs and configures HAproxy on my lb-01 server
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install haproxy
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
 
 echo "
 frontend colandru
