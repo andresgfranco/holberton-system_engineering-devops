@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Script that installs and configures HAproxy on my lb-01 server
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install haproxy
+
+echo "
+frontend colandru
+	bind *:80
+	mode http
+	default_bachend colandrubackend
+
+backend colandrubackend
+	balance roundrobin
+	option forwardfor
+	server 1872-web-01 34.74.115.197:80 check
+	server 1872-web-02 54.87.144.17:80 check" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
