@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Service(init) must say that nginx is not running
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+pkill -HUP nginx
