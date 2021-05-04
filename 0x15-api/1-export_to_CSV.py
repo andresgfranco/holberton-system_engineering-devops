@@ -12,7 +12,7 @@ if __name__ == "__main__":
     tasks = requests.get(url + "todos/?userId={}".format(user_id)).json()
 
     with open("{}.csv".format(user_id), "w") as csvfile:
-      writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-      for task in tasks:
-        writer.writerow([user_id, user["username"],
-                        task["completed"], task["title"]])
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            writer.writerow([user_id, user["username"],
+                            task["completed"], task["title"]])
