@@ -20,4 +20,4 @@ if __name__ == "__main__":
                                   "username": user["username"]})
 
     with open("{}.json".format(user_id), "w") as jsonfile:
-        jsonfile.write((json.dumps(myjsonDict)))
+        jsonfile.write((json.dumps(jsonDict)))
