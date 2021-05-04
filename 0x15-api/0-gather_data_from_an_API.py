@@ -2,7 +2,7 @@
 """Python script that, using this REST API, for a given employee ID,
 returns information about his/her TO-DO list progress."""
 import requests
-import sys import argv
+from sys import argv
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
